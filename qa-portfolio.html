@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>정지원 · QA Portfolio</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root {
+  --ink: #16181d;
+  --body: #3d4350;
+  --muted: #6b7280;
+  --line: #e2e5ea;
+  --line-soft: #eef0f3;
+  /* 당근 브랜드 컬러(#FF6F0F) 기반.
+     작은 본문 글자에는 명암비 확보를 위해 진한 톤(--accent)을,
+     점·테두리·버튼 등 장식 요소에는 브랜드 원색(--accent-br)을 씁니다. */
+  --accent: #b84a05;
+  --accent-br: #ff6f0f;
+  --accent-bg: #fff4ea;
+  --panel: #f8f8f7;
+  --mono: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  color: var(--body);
+  background: #f0f1f4;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10.5pt;
+}
+
+.page {
+  max-width: 210mm;
+  margin: 24px auto;
+  background: #fff;
+  padding: 18mm 16mm;
+  box-shadow: 0 2px 20px rgba(0,0,0,.08);
+}
+
+/* ---------- print button ---------- */
+.print-bar {
+  max-width: 210mm; margin: 20px auto 0; display: flex;
+  justify-content: flex-end; gap: 10px;
+}
+.print-btn {
+  font: inherit; font-weight: 600; font-size: 10pt; cursor: pointer;
+  background: var(--accent-br); color: #fff; border: none;
+  padding: 10px 20px; border-radius: 7px;
+}
+.print-btn:hover { background: #e05f08; }
+
+/* ---------- header ---------- */
+.head { border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+.head-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.head-id { display: flex; align-items: flex-end; gap: 15px; }
+.photo {
+  width: 62px; height: 78px; flex-shrink: 0; border-radius: 5px;
+  object-fit: cover; border: 1px solid var(--line);
+}
+h1 { font-size: 24pt; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1.1; }
+.role { font-size: 10pt; color: var(--accent); font-weight: 600; margin-top: 5px; }
+.contact { font-size: 8.6pt; color: var(--muted); text-align: right; line-height: 1.75; white-space: nowrap; }
+.contact a { color: var(--muted); text-decoration: none; }
+
+.pitch {
+  margin-top: 14px; font-size: 11pt; color: var(--ink); line-height: 1.6;
+  font-weight: 500;
+}
+.pitch strong { color: var(--accent); font-weight: 700; }
+
+/* ---------- section ---------- */
+section { margin-top: 22px; }
+h2 {
+  font-size: 11.5pt; font-weight: 800; color: var(--ink);
+  padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
+  /* 섹션 제목만 페이지 끝에 남지 않도록 다음 내용과 붙여둡니다 */
+  break-after: avoid; page-break-after: avoid;
+}
+.job, .facts, .grid { break-inside: avoid; page-break-inside: avoid; }
+h2 .num { color: var(--accent); font-family: var(--mono); font-size: 9.5pt; margin-right: 8px; }
+
+/* ---------- summary bullets ---------- */
+.sum { margin-top: 11px; display: flex; flex-direction: column; gap: 7px; }
+.sum li { list-style: none; position: relative; padding-left: 15px; font-size: 10pt; }
+.sum li::before {
+  content: ""; position: absolute; left: 0; top: 7px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--accent-br);
+}
+.sum strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- competency grid ---------- */
+.grid { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cell {
+  border: 1px solid var(--line); border-radius: 6px; padding: 11px 13px;
+  background: var(--panel);
+}
+.cell h3 { font-size: 9.8pt; color: var(--ink); font-weight: 700; margin-bottom: 4px; }
+.cell p { font-size: 9pt; color: var(--body); line-height: 1.55; }
+
+/* ---------- case ---------- */
+/* 사례가 길어 통째로 묶으면 페이지 하단에 큰 여백이 생기므로,
+   사례 전체가 아니라 제목·문단·코드 같은 작은 단위만 쪼개지지 않게 보호합니다. */
+.case {
+  margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line);
+}
+.case-head, .metrics, .code, .row { break-inside: avoid; page-break-inside: avoid; }
+.case-head { break-after: avoid; page-break-after: avoid; }
+.case:first-of-type { border-top: none; padding-top: 4px; }
+.case-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.case h3 { font-size: 11pt; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; }
+.case-meta { font-size: 8.4pt; color: var(--muted); white-space: nowrap; }
+.stack { margin-top: 5px; font-size: 8.4pt; color: var(--muted); font-family: var(--mono); }
+
+.row { margin-top: 9px; display: grid; grid-template-columns: 62px 1fr; gap: 10px; align-items: start; }
+.label {
+  font-size: 8.4pt; font-weight: 700; color: var(--accent);
+  padding-top: 1px; letter-spacing: .02em;
+}
+.row p { font-size: 9.6pt; line-height: 1.62; }
+.row p code, .case code {
+  font-family: var(--mono); font-size: 8.6pt; background: var(--accent-bg);
+  padding: 1px 4px; border-radius: 3px; color: #9c3f04;
+}
+.row strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- code snippet ---------- */
+.code {
+  margin-top: 7px; background: #fbfaf9; border: 1px solid var(--line);
+  border-left: 2px solid var(--accent-br); border-radius: 0 4px 4px 0;
+  padding: 8px 11px; overflow-x: auto;
+}
+.code code {
+  display: block; font-family: var(--mono); font-size: 8pt; line-height: 1.6;
+  white-space: pre; color: #434a55; background: none; padding: 0;
+}
+.code .c { color: #9aa0a8; }
+.code-cap { margin-top: 4px; font-size: 8.2pt; color: var(--muted); }
+
+/* ---------- metrics ---------- */
+.metrics { margin-top: 11px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.metric {
+  border: 1px solid var(--line); border-radius: 6px; padding: 9px 6px; text-align: center;
+  background: var(--accent-bg);
+}
+.metric b { display: block; font-size: 13pt; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+.metric span { display: block; font-size: 7.8pt; color: var(--muted); margin-top: 2px; line-height: 1.35; }
+
+/* ---------- table ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 9.2pt; }
+th {
+  text-align: left; font-size: 8.4pt; color: var(--muted); font-weight: 700;
+  padding: 6px 8px; border-bottom: 1.5px solid var(--line); letter-spacing: .02em;
+}
+td { padding: 7px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: top; line-height: 1.55; }
+td:first-child { font-weight: 600; color: var(--ink); width: 27%; }
+td code { font-family: var(--mono); font-size: 8.4pt; }
+
+.st { font-size: 8pt; font-weight: 700; padding: 2px 7px; border-radius: 20px; white-space: nowrap; }
+.st-done { background: #e8f4ec; color: #1c7a41; }
+.st-part { background: #fdf3e3; color: #96601a; }
+.st-todo { background: #f1f2f4; color: #5f6672; }
+
+/* ---------- career ---------- */
+.job { margin-top: 12px; break-inside: avoid; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.job h3 { font-size: 10.4pt; color: var(--ink); font-weight: 700; }
+.job h3 span { font-weight: 500; color: var(--accent); font-size: 9.4pt; }
+.job-period { font-size: 8.4pt; color: var(--muted); white-space: nowrap; }
+.job ul { margin-top: 6px; }
+.job li {
+  list-style: none; position: relative; padding-left: 13px;
+  font-size: 9.5pt; margin-top: 4px; line-height: 1.6;
+}
+.job li::before { content: "–"; position: absolute; left: 0; color: var(--accent-br); }
+.job li strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- awards ---------- */
+.awards { margin-top: 12px; display: flex; flex-direction: column; gap: 9px; }
+.award {
+  display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start;
+  padding: 11px 14px; background: var(--accent-bg);
+  border: 1px solid #f6dcc4; border-left: 3px solid var(--accent-br);
+  border-radius: 0 6px 6px 0; break-inside: avoid;
+}
+.award h3 { font-size: 10.2pt; color: var(--ink); font-weight: 700; letter-spacing: -0.01em; }
+.award h3 em { font-style: normal; color: var(--accent); font-weight: 600; font-size: 9pt; }
+.award p { font-size: 9pt; color: var(--body); margin-top: 3px; line-height: 1.55; }
+.award .when { font-size: 8.4pt; color: var(--muted); white-space: nowrap; text-align: right; padding-top: 2px; }
+
+/* ---------- footer facts ---------- */
+.facts { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.fact { font-size: 9.4pt; }
+.fact b { color: var(--ink); font-weight: 700; }
+.fact span { color: var(--muted); }
+
+.note {
+  margin-top: 12px; padding: 10px 13px; border-left: 3px solid var(--accent-br);
+  background: var(--accent-bg); font-size: 9.3pt; line-height: 1.6; border-radius: 0 5px 5px 0;
+}
+.note b { color: var(--ink); }
+
+/* ---------- print ---------- */
+@page { size: A4; margin: 13mm 12mm; }
+
+@media print {
+  body { background: #fff; font-size: 9.6pt; }
+  .page { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .print-bar { display: none; }
+  h1 { font-size: 21pt; }
+  section { margin-top: 16px; }
+  .case { margin-top: 11px; padding-top: 11px; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">PDF로 저장 / 인쇄</button>
+</div>
+
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+  <header class="head">
+    <div class="head-top">
+      <div class="head-id">
+        <img class="photo" src="images/profile.jpg" alt="정지원"
+             onerror="this.style.display='none'" />
+        <div>
+          <h1>정지원</h1>
+          <p class="role">QA Manager 인턴 지원 · 중고거래실</p>
+        </div>
+      </div>
+      <div class="contact">
+        loopy0107@sookmyung.ac.kr<br />
+        010-7231-3085<br />
+        github.com/codeJiwon · linkedin.com/in/codejiwon
+      </div>
+    </div>
+    <p class="pitch">
+      iOS 앱을 설계부터 배포·운영까지 단독으로 맡아오며,
+      <strong>결함을 사용자에게 닿기 전에 구조로 걸러내는 방법</strong>을 만들어왔습니다.
+      코드를 직접 짜본 사람으로서 결함이 어디서 생기는지 알고, 재현하고, 다시 새어나오지 않게 고정하는 일을 해왔습니다.
+    </p>
+  </header>
+
+  <!-- ================= SUMMARY ================= -->
+  <section>
+    <h2><span class="num">01</span>핵심 요약</h2>
+    <ul class="sum">
+      <li>App Store 정식 출시 iOS 앱 <strong>3종</strong>의 아키텍처 설계부터 릴리즈·크래시 핫픽스·사용자 리뷰 기반 QA까지 단독 수행</li>
+      <li>재현 조건이 특수해 놓치기 쉬운 <strong>동시성·타이밍 결함</strong>을 추적해 근본 원인을 제거하고, 구조적으로 재발이 불가능하도록 설계</li>
+      <li>AI 출력 검증 체계를 설계해 <strong>회귀 테스트 3개 → 12개</strong>로 확대, 실제 사용 데이터 5건 기준으로 결과 검증</li>
+      <li>트러블슈팅 기록을 재현 경로·원인·검증 방법까지 문서로 자산화해 <strong>회사 표준 문서로 정착</strong> (프론트엔드·백엔드 팀 전체 도입)</li>
+      <li>Apple Swift Student Challenge 2026 Winner · 숙명여자대학교 소프트웨어융합전공(데이터사이언스전공)</li>
+    </ul>
+  </section>
+
+  <!-- ================= COMPETENCY ================= -->
+  <section>
+    <h2><span class="num">02</span>QA 관점 역량</h2>
+    <div class="grid">
+      <div class="cell">
+        <h3>결함 재현과 원인 계층 분리</h3>
+        <p>"특정 상황에서만 발생"하는 증상을 재현 조건까지 좁히고, 설정·요청·응답·후처리 중 어느 계층의 문제인지 갈라내 근본 원인을 특정합니다.</p>
+      </div>
+      <div class="cell">
+        <h3>재발 방지 자산화</h3>
+        <p>확인한 결함을 그때 고치고 끝내지 않고 회귀 테스트와 문서로 고정해, 같은 검증을 손으로 반복하지 않아도 되게 만듭니다.</p>
+      </div>
+      <div class="cell">
+        <h3>경계·예외 상황 설계</h3>
+        <p>정상 입력만으로는 드러나지 않는 결함을 찾기 위해 구조가 깨진 값, 존재하지 않는 참조, 비정상 타이밍 등 실패를 유도하는 입력을 함께 검증합니다.</p>
+      </div>
+      <div class="cell">
+        <h3>검증 기준 설계 (AI 협업)</h3>
+        <p>AI가 만든 결과를 그대로 신뢰하지 않고, 무엇을 승인 조건으로 걸지 먼저 정의합니다. 반복 검증은 자동화해 실행 속도를 확보합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CASE 1 ================= -->
+  <section>
+    <h2><span class="num">03</span>주요 사례</h2>
+
+    <div class="case">
+      <div class="case-head">
+        <h3>AI가 틀려도 결과가 무너지지 않는 검증 구조 설계</h3>
+        <span class="case-meta">안아주 · 2026.07 – 08</span>
+      </div>
+      <p class="stack">FastAPI · Amazon Bedrock · Pydantic v2 · Claude Code</p>
+
+      <div class="metrics">
+        <div class="metric"><b>3 → 12</b><span>회귀 테스트</span></div>
+        <div class="metric"><b>5 / 5</b><span>실제 회의 데이터<br />구조 검증 통과</span></div>
+        <div class="metric"><b>4 → 0</b><span>규칙 위반 건수</span></div>
+        <div class="metric"><b>1/2 → 3/3</b><span>날짜 해석 재현성</span></div>
+      </div>
+
+      <div class="row">
+        <span class="label">발견</span>
+        <p>직접 만든 테스트 데이터로는 검증을 통과했으나, 팀이 보유한 <strong>실제 회의록 5건으로 재검증하자 전혀 다른 결함</strong>이 드러났습니다. 원문에 연도가 한 번도 언급되지 않았는데 AI가 마감일을 <code>2023-08-22</code>로 지어내고 있었습니다. 자체 제작 데이터는 전부 상대 표현이라 이 유형의 오류가 발생할 수 없는 데이터였습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">조치</span>
+        <div>
+          <p>프롬프트를 정교하게 다듬는 대신 <strong>서버에서 결과를 방어하는 3중 구조</strong>를 구현했습니다. ① AI가 제시한 근거 ID를 실제 입력에 존재하는 것만 통과시키는 화이트리스트 검증 ② 계층(H1·H2·H3)을 잘못 반환해도 서버가 트리 깊이 기준으로 재계산하는 정규화 ③ 날짜 계산을 모델 추론에서 분리해 서버의 결정적 로직으로 이관. 판단 불가능한 값은 추측 대신 <strong>사용자 확인이 필요한 상태로 표시</strong>하도록 설계했습니다.</p>
+          <div class="code"><code><span class="c"># AI가 근거로 제시한 ID 중 실제 입력에 존재하는 것만 통과시킨다</span>
+evidence_ids = [
+    s for s in (topic.get("evidence_segment_ids") or [])
+    if s in valid_ids
+]
+<span class="c"># H3(depth 3) 아래로는 계층 생성 자체를 차단한다</span>
+children = [] if depth &gt;= 3 else normalize_topic_tree(
+    topic.get("children", []), depth + 1, valid_ids
+)</code></div>
+          <p class="code-cap">존재하지 않는 근거가 결과에 섞이는 경로와, 4단계 이상 깊어진 계층이 그대로 통과하는 경로를 각각 차단</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">원인분리</span>
+        <p>경량 모델의 규칙 위반은 상위 모델 교체 후 사라졌으나 마감일 오류는 <strong>두 모델 모두에서 동일하게 재현</strong>됐습니다. 이를 모델 성능이 아닌 서버 로직의 결함으로 판단했고, 이후 <em>두 모델에서 모두 재현되면 코드 결함, 한쪽에서만 재현되면 모델 한계</em>로 구분하는 기준을 세웠습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">결과</span>
+        <p>확인한 결함을 매번 회귀 테스트로 고정해 3개에서 12개까지 확대했습니다. 검증이 자산으로 쌓이면서 <strong>모델을 통째로 교체하는 변경도 결과 비교만으로 판단</strong>할 수 있게 됐고, 반복 확인에 드는 시간이 사라졌습니다. 검증 범위를 백엔드에 한정하지 않고, 생성된 계층을 렌더링하는 <strong>프론트엔드(JS) 데모의 트리 파싱 버그까지 찾아 수정</strong>했습니다.</p>
+      </div>
+    </div>
+
+    <!-- ================= CASE 2 ================= -->
+    <div class="case">
+      <div class="case-head">
+        <h3>재현 조건이 특수한 동시성 결함 추적 — "가끔 로그아웃되는" 증상</h3>
+        <span class="case-meta">일루와 (with1LU) · 2026.03 – 08</span>
+      </div>
+      <p class="stack">Swift 6 · async/await · Actor · Clean Architecture</p>
+
+      <div class="row">
+        <span class="label">증상</span>
+        <p>특정 상황에서만 사용자가 로그아웃되는 문제가 재현 조건 없이 산발적으로 보고됐습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">원인</span>
+        <p>홈 진입 시 프로필·경기 정보 API가 <strong>동시에 401을 받으면 토큰 갱신이 두 번 호출</strong>되고, 두 번째 갱신은 이미 무효화된 refresh token으로 요청되어 실패 → 세션 종료로 이어지고 있었습니다. 요청이 순차적으로 실행되는 화면에서는 재현되지 않아 발견이 늦어진 결함이었습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">조치</span>
+        <div>
+          <p>Swift <code>actor</code> 격리를 이용한 single-flight 패턴으로, 진행 중인 갱신이 있으면 새로 시작하지 않고 결과를 공유하도록 설계했습니다. 동시 N개 요청에도 <strong>갱신 API 호출이 정확히 1회</strong>임을 보장합니다. 갱신 요청 자체가 401을 받아 무한 루프에 빠지는 경로는 <code>requiresAuthentication</code> 플래그로 재시도 대상에서 제외해 구조적으로 차단했습니다.</p>
+          <div class="code"><code>actor TokenRefreshCoordinator {
+    private var refreshTask: Task&lt;Void, Error&gt;?
+
+    func refresh(_ operation: @escaping () async throws -&gt; Void) async throws {
+        if let refreshTask {
+            try await refreshTask.value   <span class="c">// 진행 중이면 결과를 공유</span>
+            return
+        }
+        let task = Task { try await operation() }
+        refreshTask = task
+        defer { refreshTask = nil }       <span class="c">// 성공·실패 모두 정리</span>
+        try await task.value
+    }
+}</code></div>
+          <p class="code-cap">actor 격리로 상태 접근이 직렬화되어, 갱신이 중복 실행되는 경로 자체가 사라짐</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">재발</span>
+        <p>수정 후에도 일부 화면에서 동일 증상이 재발했습니다. 추적 결과 여러 Repository가 기본값으로 <code>DefaultAPIClient()</code>를 각자 생성해, 갱신 로직이 주입된 공유 인스턴스가 아닌 <strong>빈 인스턴스를 사용</strong>하고 있었습니다. 9개 Repository의 의존성을 공유 인스턴스로 통일한 뒤, 코드 전체 검색으로 직접 생성이 <strong>0건</strong>임을 확인하고 재발 방지 규칙으로 문서화했습니다.</p>
+      </div>
+      <div class="note">
+        <b>남은 과제로 기록한 것</b> — Actor 격리는 런타임에서 구조적으로 보장되지만, 동시 요청에 대한 자동화 통합 테스트는 아직 작성하지 못했습니다. 현재는 프록시 툴로 두 요청을 동시에 401로 응답시키는 수동 테스트로 검증하고 있으며, 자동화가 다음 단계입니다.
+      </div>
+    </div>
+
+    <!-- ================= CASE 3 ================= -->
+    <div class="case">
+      <div class="case-head">
+        <h3>사용자가 먼저 알아채는 결함 — 재현 경로와 함께 기록·추적</h3>
+        <span class="case-meta">일루와 (with1LU)</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>결함</th><th>원인과 조치</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>업로드한 사진의<br />썸네일 미표시</td>
+            <td>서버가 <code>thumbnailUrl</code>에 절대 URL이 아닌 S3 object key를 반환하는데 클라이언트가 API base URL을 붙여 존재하지 않는 주소로 변환. 응답 payload를 직접 확인해 원인을 특정하고, key 패턴을 판별해 분기하는 공통 resolver로 통합.</td>
+          </tr>
+          <tr>
+            <td>구단 로고와<br />구단명 불일치</td>
+            <td>로고는 <code>team.id</code> 매핑으로, 이름은 서버 <code>team.name</code>으로 계산해 한 화면에 두 개의 데이터 기준이 공존. 사용자가 즉시 인지하는 오류였고, 도메인 엔티티 기준으로 통일해 해결.</td>
+          </tr>
+          <tr>
+            <td>갤러리 이미지<br />디코딩 실패</td>
+            <td>HEIC로 읽힌 원본을 Content-Type만 <code>image/jpeg</code>로 전송해 실제 바이트와 불일치. 업로드 전 JPEG 정규화로 해결.</td>
+          </tr>
+          <tr>
+            <td>저장 버튼<br />레이스 컨디션</td>
+            <td>사진 업로드 완료 전 저장을 누르면 이미지 키가 빈 배열로 전송. 업로드 중 버튼 비활성화 + 저장 시점 키 부재 시 재업로드로 이중 방어.</td>
+          </tr>
+          <tr>
+            <td>재가입 온보딩<br />중단</td>
+            <td>탈퇴 후 동일 계정 재가입 시 서버의 "신규 가입 가능" 상태와 클라이언트 로컬 차단 상태가 충돌해 플로우가 끊김. 상태 판단 기준을 서버 응답으로 일원화.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================= CASE 4 ================= -->
+    <div class="case">
+      <div class="case-head">
+        <h3>트러블슈팅 문서 자산화 — 팀 표준으로 정착</h3>
+        <span class="case-meta">(주)에스엠플래닛 인턴 · 2025.09 – 12</span>
+      </div>
+      <div class="row">
+        <span class="label">배경</span>
+        <p>React Native iOS 환경에서 같은 유형의 문제가 팀 안에서 반복적으로 재발하고 있었으나, 해결 과정이 개인에게만 남아 다음 사람이 같은 시간을 다시 쓰고 있었습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">조치</span>
+        <p>발생한 문제를 <strong>증상 · 재현 경로 · 원인 · 해결 · 검증 방법 · 배운 점</strong>의 일관된 구조로 정리해 공유했습니다. 원인을 추정으로 적지 않고 실제 확인한 근거(응답 원문, 코드 검색 결과, 빌드 로그)를 함께 남기는 것을 기준으로 삼았습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">결과</span>
+        <p>작성한 문서가 실제 문제 해결에 재사용되며 효과가 검증되어, <strong>프론트엔드·백엔드 팀이 동일 양식을 도입해 회사 표준 문서로 정착</strong>했습니다. 별도로 iOS 빌드 캐시·DerivedData 문제를 분석해 <strong>빌드 시간을 약 60% 단축</strong>하고 초기화 자동화 스크립트를 작성해 팀에 배포했습니다.</p>
+      </div>
+    </div>
+
+    <!-- ================= CASE 5 ================= -->
+    <div class="case">
+      <div class="case-head">
+        <h3>검증 커버리지를 정직하게 구분해 기록</h3>
+        <span class="case-meta">SmileGuardian · Apple Swift Student Challenge 2026 Winner</span>
+      </div>
+      <p class="stack">Swift · Vision · CIE L*a*b* · CoreHaptics · 완전 온디바이스</p>
+      <div class="row">
+        <span class="label">기준</span>
+        <p>정량 데이터와 사용자 검증 없이 "완성됐다"고 말하지 않는 것을 원칙으로, 달성한 것과 검증하지 못한 것을 문서에 명확히 구분해 남겼습니다.</p>
+      </div>
+      <table>
+        <tbody>
+          <tr><td>기능 구현 · 빌드 · 런타임</td><td><span class="st st-done">완료</span> 전체 플로우 동작 및 크래시 없음 확인</td></tr>
+          <tr><td>엣지 케이스 대응</td><td><span class="st st-part">부분</span> 코드 레벨 처리 구현, Fallback 정확도 정량 검증 미완</td></tr>
+          <tr><td>조명 조건별 정확도</td><td><span class="st st-todo">미완</span> 조명 변화에 대한 강건성 정량 데이터 없음</td></tr>
+          <tr><td>탐지율 (오탐 / 미탐)</td><td><span class="st st-todo">미완</span> 임계값이 경험적 튜닝, 체계적 테스트셋 기반 검증 필요</td></tr>
+          <tr><td>VoiceOver 발화 충돌</td><td><span class="st st-todo">미완</span> 활성 상태에서의 TTS 중복 검증 필요</td></tr>
+          <tr><td>실사용자 사용성 테스트</td><td><span class="st st-todo">미완</span> 핵심 타깃 대상 검증 미수행 — 가장 중요한 과제</td></tr>
+        </tbody>
+      </table>
+      <p class="stack" style="margin-top:8px; font-family:inherit; font-size:9pt;">
+        다음 단계 우선순위까지 함께 정의해 기록했습니다 — ① 실사용자 사용성 테스트 ② 조건별 정량 정확도 측정 ③ VoiceOver 충돌 처리 ④ Fallback을 확신도 기반 재촬영 안내로 개선
+      </p>
+    </div>
+
+    <!-- ================= CASE 6 ================= -->
+    <div class="case">
+      <div class="case-head">
+        <h3>실사용자 대상 접근성·사용성 테스트 수행</h3>
+        <span class="case-meta">UniBond · 2023.05 – 2024.01</span>
+      </div>
+      <p class="stack">Flutter · PM 겸 프론트엔드 · 2023 배리어프리 앱 개발 콘테스트</p>
+      <div class="row">
+        <span class="label">검증</span>
+        <p>희귀·난치성 질환 청소년을 위한 커뮤니티 앱을 개발하며, <strong>실제 질환자 6명을 대상으로 접근성·사용성 테스트</strong>를 직접 진행했습니다. 개발자 관점의 점검만으로는 드러나지 않는, 시각적 피로도와 인지 부담이 높은 사용자에게 실제로 무엇이 장벽이 되는지를 관찰했습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">반영</span>
+        <p>수집한 정성·정량 데이터를 바탕으로 색 대비·버튼 크기·폰트 가독성 등 <strong>접근성 기준을 정의해 UI에 반영</strong>했습니다. 레어노트 공동창업자, 한국 희귀·난치성 질환 연합회와 협업해 사용자 요구를 교차 검증했습니다.</p>
+      </div>
+      <div class="row">
+        <span class="label">결과</span>
+        <p>현대오토에버·과학기술정보통신부 지원 <strong>최종 제작지원팀(8팀)으로 선정</strong>됐고, Google Play에 배포했습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAREER ================= -->
+  <section>
+    <h2><span class="num">04</span>경력</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>(주)루트파인더즈 <span>· iOS Freelance Developer (1인 외주)</span></h3>
+        <span class="job-period">2026.02 – 2026.08</span>
+      </div>
+      <ul>
+        <li>KBO 야구 직관 기록·직관 메이트 매칭 iOS 앱 전체 프론트엔드 단독 개발</li>
+        <li>디자이너·기획자·백엔드 팀과 협업하며 <strong>기능 개발부터 QA, 배포까지 전 과정 참여</strong>. GitHub Flow PR 기반으로 코드 리뷰 수행</li>
+        <li>서버 API 스펙이 문서화되지 않은 상태에서 응답 payload를 직접 검증하며 클라이언트 계약을 정의하고 백엔드와 조율</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>(주)에스엠플래닛 <span>· React Native (iOS) Developer Intern</span></h3>
+        <span class="job-period">2025.09 – 2025.12</span>
+      </div>
+      <ul>
+        <li>시각장애인용 콘텐츠 플랫폼 앱 개발 (React Native + TypeScript)</li>
+        <li><strong>트러블슈팅 문서 양식을 팀 표준으로 정착</strong>시키고, 빌드 시간 약 60% 단축</li>
+        <li>명세 없이 제공되던 CDN 스크립트(JSON) 구조를 역공학해 시각적 사양서로 문서화 → 신규 개발자 온보딩 비용 축소, 팀 표준 레퍼런스로 활용</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>SOPT 34·35기 iOS <span>· 앱 출시 및 운영</span></h3>
+        <span class="job-period">2024.03 – 2026.02</span>
+      </div>
+      <ul>
+        <li>C2C 매칭 커뮤니티 앱 '수현이랑' iOS 개발 — <strong>누적 유저 4만 명 이상, App Store 전체 인기 19위 · 라이프스타일 3위</strong></li>
+        <li>이용자 간 1:1 채팅으로 만날 시간과 장소를 조율하는 구조를 설계·운영하며, 사람과 사람이 직접 만나는 거래 흐름에서 발생하는 문제를 가까이서 확인</li>
+        <li>App Store 다수 릴리즈 및 TestFlight 내·외부 테스터 운영, <strong>사용자 리뷰 기반 QA와 크래시 핫픽스 배포</strong> 수행</li>
+        <li>탐험 서비스 'ORB' iOS 개발 — UI 설계부터 API 연동, <strong>QA 대응, 성능 개선까지 엔드투엔드 수행</strong>. 예외 상황을 포괄하는 온보딩 플로우와 GPS 기반 장소 인증 기능 전체 구현</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>(주)유학앤교육 <span>· Python 알고리즘 튜터</span></h3>
+        <span class="job-period">2025.05 – 2026.02</span>
+      </div>
+      <ul>
+        <li>기초 문법부터 자료구조·알고리즘까지 단계별 커리큘럼을 설계해 1:1 교육 진행</li>
+        <li>학생 코드를 리뷰하며 <strong>문제의 원인을 상대가 이해할 수 있는 언어로 설명</strong>하는 훈련 — 결함을 개발자에게 전달하는 QA 커뮤니케이션과 맞닿은 경험</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= AWARDS ================= -->
+  <section>
+    <h2><span class="num">05</span>수상 · 선정</h2>
+    <div class="awards">
+
+      <div class="award">
+        <div>
+          <h3>Apple Swift Student Challenge 2026 Winner <em>· Apple Inc.</em></h3>
+          <p>전 세계 학생 개발자 대상 대회에서 대한민국 수상자로 선정. 시각장애인이 식후 치아 상태를 스스로 확인하는 완전 온디바이스 앱 <strong>SmileGuardian</strong>을 단독 설계·개발</p>
+        </div>
+        <span class="when">2026.02</span>
+      </div>
+
+      <div class="award">
+        <div>
+          <h3>34기 NOW SOPT 앱잼 우수상 <em>· SOPT</em></h3>
+          <p>AI 캐릭터 대화 기반 장소 추천·탐험 서비스 <strong>ORB</strong> 개발. iOS 개발자로서 GPS 기반 장소 인증 기능 전체와 예외 상황 대응 온보딩 플로우를 구현, App Store 정식 배포까지 완료</p>
+        </div>
+        <span class="when">2024.07</span>
+      </div>
+
+      <div class="award">
+        <div>
+          <h3>2023 배리어프리 앱 개발 콘테스트 제작지원팀 선정 <em>· 사단법인 그린라이트</em></h3>
+          <p>현대오토에버·과학기술정보통신부 지원 <strong>최종 제작지원팀 8팀에 선정</strong>. 희귀·난치성 질환 청소년 커뮤니티 앱 <strong>UniBond</strong>를 기획·개발하고 실사용자 6명 대상 접근성 테스트 수행</p>
+        </div>
+        <span class="when">2024.02</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ETC ================= -->
+  <section>
+    <h2><span class="num">06</span>학력 · 자격 · 활동</h2>
+    <div class="facts">
+      <div class="fact"><b>숙명여자대학교</b> <span>소프트웨어융합전공(데이터사이언스전공) · 2022.03 – 2027.02 졸업예정</span></div>
+      <div class="fact"><b>2026 SWING in Silicon Valley</b> <span>선발 · Google·AWS·Stanford 등 전문가 인터뷰 7회 주도</span></div>
+      <div class="fact"><b>사단법인 한미비전협회(KUVA)</b> <span>정회원 · 2026.07 –</span></div>
+      <div class="fact"><b>주한미국대사관 AI TechCamp</b> <span>Alumni 선정 · 2026.04</span></div>
+      <div class="fact"><b>모바일 앱 프로그래밍 학회 APPS</b> <span>11기 부회장 · 2023.03 – 2024.12</span></div>
+      <div class="fact"><b>TOPCIT</b> <span>ICT역량지수평가 수준 3 · 2025.05</span></div>
+      <div class="fact"><b>OPIc</b> <span>영어 Intermediate Mid 2 · 2025.03</span></div>
+    </div>
+    <div class="note">
+      <b>지원 동기</b> — 개발을 하면서 가장 많은 시간을 쓴 일은 기능을 새로 만드는 일이 아니라, 왜 깨졌는지 찾아내고 다시 깨지지 않게 만드는 일이었습니다.
+      직접 코드를 짜본 사람으로서 어디가 취약한지 감이 오고, 그 감각을 사용자에게 닿기 전에 결함을 걸러내는 일에 쓰고 싶습니다.
+      빠른 릴리즈 속도 안에서 품질을 지키는 방법은 검증을 늦추는 것이 아니라 반복되는 검증을 자산으로 쌓는 것이라고 생각합니다.
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

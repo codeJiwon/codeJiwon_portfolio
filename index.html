@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>정지원 · iOS Developer Portfolio</title>
+<meta name="description" content="실패할 수 있는 지점을 먼저 정의하고 구조로 막는 iOS 개발자, 정지원의 포트폴리오입니다." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner container">
+    <a href="#home" class="nav-logo">JW<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link" data-nav>Home</a>
+      <a href="#portfolio" class="nav-link" data-nav>Portfolio</a>
+      <a href="#career" class="nav-link" data-nav>Career</a>
+      <a href="#about" class="nav-link" data-nav>About</a>
+      <a href="#footprints" class="nav-link" data-nav>Footprints</a>
+      <a href="#contact" class="nav-link" data-nav>Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" data-nav>Home</a>
+  <a href="#portfolio" data-nav>Portfolio</a>
+  <a href="#career" data-nav>Career</a>
+  <a href="#about" data-nav>About</a>
+  <a href="#footprints" data-nav>Footprints</a>
+  <a href="#contact" data-nav>Contact</a>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <p class="eyebrow">iOS Developer</p>
+      <h1>정지원</h1>
+      <p class="hero-lead">
+        iOS 앱을 설계부터 배포·운영까지 단독으로 맡아오며,
+        <strong>실패할 수 있는 지점을 먼저 정의하고 구조로 막는</strong> 방식으로 일해왔습니다.
+        눈앞의 오류를 지우는 대신 재현하고 원인을 끝까지 추적해, 같은 문제가 다시 새어나오지 않게 고정합니다.
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge badge-accent">Apple Swift Student Challenge 2026 Winner</span>
+        <span class="badge">숙명여자대학교 소프트웨어융합전공(데이터사이언스전공)</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary">포트폴리오 보기</a>
+        <a href="#contact" class="btn btn-ghost">연락하기</a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/codejiwon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="https://github.com/codeJiwon" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3z"/></svg>
+        </a>
+        <a href="https://velog.io/@loopy0107" target="_blank" rel="noopener" aria-label="Velog">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 4h18v3H3V4zm0 6.5h18v3H3v-3zM3 17h12v3H3v-3z"/></svg>
+        </a>
+        <a href="mailto:loopy0107@sookmyung.ac.kr" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5 7.8 6 7.8-6H4.2zM20 7.4l-7.6 5.85a1 1 0 0 1-1.22 0L4 7.4V18h16V7.4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal">
+      <div class="hero-photo-frame">
+        <img src="images/profile.jpg" alt="정지원 프로필 사진" onerror="this.parentElement.classList.add('img-fallback')" />
+        <div class="fallback-content">JW</div>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#highlights" aria-label="아래로 스크롤">
+    <span></span>
+  </a>
+</section>
+
+<!-- ================= HIGHLIGHTS ================= -->
+<section id="highlights" class="highlights">
+  <div class="container highlights-grid">
+    <div class="highlight-item reveal">
+      <span class="highlight-num">2026</span>
+      <p class="highlight-label">Apple Swift Student Challenge<br />Winner</p>
+    </div>
+    <div class="highlight-item reveal">
+      <span class="highlight-num">4만+</span>
+      <p class="highlight-label">누적 유저 · 앱스토어 전체 19위<br /><span class="muted">수현이랑</span></p>
+    </div>
+    <div class="highlight-item reveal">
+      <span class="highlight-num">3</span>
+      <p class="highlight-label">아키텍처 설계부터 배포까지<br />단독으로 진행한 iOS 앱</p>
+    </div>
+    <div class="highlight-item reveal">
+      <span class="highlight-num">60%</span>
+      <p class="highlight-label">iOS 빌드 시간 단축, 팀 표준<br />문서로 정착시킨 트러블슈팅</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal">01</p>
+    <h2 class="section-title reveal">프로젝트</h2>
+    <p class="section-lead reveal">각 카드를 클릭하면 상세 기여 내용과 기술적 판단 과정을 볼 수 있습니다.</p>
+
+    <div class="filter-bar reveal" id="filterBar">
+      <button class="filter-btn active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="ios">iOS</button>
+      <button class="filter-btn" data-filter="flutter">Flutter</button>
+      <button class="filter-btn" data-filter="ai">AI · Backend</button>
+    </div>
+
+    <div class="project-grid" id="projectGrid">
+
+      <!-- ===== 수현이랑 ===== -->
+      <article class="project-card reveal" data-tags="ios">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#5b1a3a; --logo-to:#c81f6e;">
+            <img src="images/projects/withsuhyeon-logo.png" alt="수현이랑 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">수현</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>수현이랑 <span class="muted">(WithSuhyeon)</span></h3>
+            <p>부모님 몰래 떠나는 연인을 위한 알리바이 생성 커뮤니티 앱 — iOS 전체 개발</p>
+            <div class="tag-list small">
+              <span class="tag">SwiftUI</span><span class="tag">Combine</span><span class="tag">MVI</span>
+              <span class="tag">Clean Architecture</span><span class="tag">Firebase FCM</span><span class="tag">AdMob</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <div class="stat-grid">
+            <div class="stat"><span class="stat-num">4만+</span><span class="stat-label">누적 유저</span></div>
+            <div class="stat"><span class="stat-num">#19</span><span class="stat-label">앱스토어 전체</span></div>
+            <div class="stat"><span class="stat-num">#3</span><span class="stat-label">라이프스타일</span></div>
+            <div class="stat"><span class="stat-num">4,121</span><span class="stat-label">Instagram 팔로워</span></div>
+          </div>
+
+          <p class="project-meta">역할: iOS 개발 (단독) · 기간: 2025.01 – 2025.08 · 배포: App Store 정식 출시</p>
+
+          <p>배포 2개월 만에 앱스토어 전체 인기 차트 19위, 라이프스타일 부문 3위를 기록했고, 섹슈얼 웰니스 브랜드 <strong>체레미마카(CHEREMI MAKA)</strong>와 협업했으며 디스콰이엇 주간 프로덕트 리더보드 2위에 선정됐습니다.</p>
+
+          <h4>아키텍처 설계 — MVI 단방향 데이터 흐름</h4>
+          <p>갤러리 화면 하나에도 스크롤 오프셋·카테고리·필터·페이지네이션 상태가 동시에 변화합니다. MVVM의 분산된 상태 변화 진입점 문제를 직접 프로토타이핑으로 검증한 뒤, State / Intent / SideEffect를 분리한 Feature 클래스 구조를 15개 이상 화면에 일관 적용했습니다.</p>
+          <pre class="code-block"><code>class GalleryFeature: Feature {
+    struct State {
+        var galleryItems: [GalleryPost] = []
+        var filterSelection: GalleryFilterSelection?
+        var isAtTop: Bool = true
+    }
+    enum Intent {
+        case enterScreen(isInitialized: Bool)
+        case tapFilter, applyFilter(GalleryFilterSelection)
+        case showLastItem, refresh, scrollChanged(CGFloat)
+    }
+    func handleIntent(_ intent: Intent) {
+        // 유일한 상태 변화 진입점 → 버그 재현 경로가 단일화됨
+    }
+}</code></pre>
+
+          <h4>자체 설계 DI Container &amp; 다계층 Network Client</h4>
+          <p>서드파티 DI 프레임워크 대신 Swift Property Wrapper 기반의 경량 DI Container를 직접 설계해 Feature 클래스가 구체 구현체를 직접 import하지 않도록 했습니다. 인증 필요 API·비인증 API·멀티파트 업로드·Void 응답을 전용 메서드로 분리해, 서버에 <code>result: null</code> 응답이 추가됐을 때도 <code>requestVoid()</code> 메서드 추가만으로 기존 코드 수정 없이 대응했습니다.</p>
+
+          <h4>AI와 설계안을 검토해 구축한 타입 안전 Analytics 체계</h4>
+          <p>Amplitude 이벤트 구조 설계 시 AI와 반복 대화하며 체계를 정교화했습니다. "어떤 지역 요청이 채팅까지 이어지는지 추적할 수 있는가?"라는 AI의 질문을 계기로 단순 클릭 카운트가 아닌 7단계 행동 퍼널 전체를 추적하는 구조가 필요하다는 판단을 도출했고, 최종 이벤트 분류 체계와 강타입 프로퍼티 구조는 직접 확정했습니다.</p>
+          <ul class="plain-list">
+            <li><strong>도메인별 enum 이벤트 분류</strong> — 이벤트명 오타를 컴파일 타임에 차단</li>
+            <li><strong>강타입 프로퍼티 구조체</strong> — 키 오타로 인한 데이터 누락 방지</li>
+            <li><strong>유저 프로퍼티 기반 코호트 분석</strong> — 업로드·다운로드·채팅 카운터로 재방문 상관관계 분석 기반 마련</li>
+          </ul>
+
+          <h4>핵심 기능 구현 — 완성도와 엣지 케이스</h4>
+          <ul class="plain-list">
+            <li><strong>적응형 이미지 압축</strong> — 목표 크기에 도달할 때까지만 품질을 낮추는 알고리즘 직접 설계, 원본이 작을수록 더 좋은 화질 유지</li>
+            <li><strong>FCM 토큰 중복 전송 방지</strong> — Keychain(최신 토큰)과 UserDefaults(마지막 전송 토큰)를 분리 저장해 실제 변경 시에만 서버 전송</li>
+            <li><strong>Sticky Header 상태 머신</strong> — initialOffset / currentOffset / previousOffset 3-offset 비교로 스크롤 방향을 안정적으로 판단</li>
+            <li><strong>업로드 폼 엣지 케이스</strong> — 중복 업로드·중복 화면 이탈 방지 플래그, 실시간 유효성 검사, 필드별 독립 에러 메시지</li>
+          </ul>
+
+          <h4>광고 수익화 · Design System · 운영</h4>
+          <p>Google Mobile Ads 초기화 전 GDPR 동의 흐름을 처리하는 <code>AdBootstrapper</code>를 설계해, 동의 폼 로드 실패 시에도 UX가 중단되지 않도록 했습니다. 광고 노출은 사진 다운로드·수현 요청 업로드 완료 직후로 배치해 사용자의 핵심 행동 완료 이후에만 표시되도록 설계했습니다. 30개 이상의 재사용 공통 컴포넌트로 구성된 디자인 시스템을 구축했고, App Store 1.3.x → 1.5.0 다수 릴리즈와 TestFlight 운영, 사용자 리뷰 기반 QA·핫픽스 배포 경험을 보유하고 있습니다.</p>
+
+          <div class="project-links">
+            <a href="https://apps.apple.com/kr/app/%EC%88%98%ED%98%84%EC%9D%B4%EB%9E%91/id6740886523" target="_blank" rel="noopener">App Store ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.sopt.withsuhyeon" target="_blank" rel="noopener">Play Store ↗</a>
+            <a href="https://www.vegannews.co.kr/news/article.html?no=33581" target="_blank" rel="noopener">협업 기사 ↗</a>
+          </div>
+        </div>
+        </div>
+      </article>
+
+      <!-- ===== 일루와 ===== -->
+      <article class="project-card reveal" data-tags="ios">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#0f1f4d; --logo-to:#3d5af1;">
+            <img src="images/projects/with1lu-logo.png" alt="일루와 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">1LU</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>일루와 <span class="muted">(with1LU)</span></h3>
+            <p>KBO 야구 직관 경험 기록 iOS 앱 — 전체 프론트엔드 개발</p>
+            <div class="tag-list small">
+              <span class="tag">Swift 6</span><span class="tag">Clean Architecture</span>
+              <span class="tag">async/await · Actor</span><span class="tag">S3 Presigned Upload</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <p class="project-quote">"기능을 만들었다"가 아니라 "실패 가능한 지점을 구조적으로 제거했다"는 관점으로 설계한 프로젝트.</p>
+          <p class="project-meta">역할: iOS 프론트엔드 단독 개발 · 기간: 2026.03 – 2026.08 · 백엔드 팀과 GitHub Flow PR 협업</p>
+
+          <h4>인증 흐름 진단 — 갱신 코드는 있는데 로그인이 풀리는 문제</h4>
+          <p>RefreshToken 발급 API의 DTO·Endpoint·Repository·UseCase가 이미 전부 구현되어 있었는데도, 일부 화면에서 401을 받으면 곧장 "로그인 정보가 만료되었습니다"가 떴습니다. 추적해보니 <code>RefreshTokenUseCase</code>는 DIContainer에 "등록"만 되어 있을 뿐 어떤 ViewModel에도 실제로 주입되지 않은 죽은 코드였고, APIClient는 401을 받으면 갱신을 시도하지 않고 그대로 <code>NetworkError.unauthorized</code>를 던지기만 했습니다. 부품은 다 있었지만 그 부품들을 잇는 흐름이 빠져 있었던 것입니다.</p>
+
+          <h4>동시 401 요청의 토큰 중복 갱신 제거</h4>
+          <p>홈 진입 시 프로필·경기 정보 API가 동시에 401을 받으면 토큰 갱신이 두 번 호출되고, 두 번째 갱신은 이미 무효화된 refresh token으로 요청되어 로그아웃되는 문제를 발견했습니다. Swift <strong>actor</strong>의 격리 모델을 활용한 single-flight 패턴으로, 진행 중인 갱신 Task가 있으면 그 결과를 공유하도록 설계해 동시 N개 요청에도 refresh API가 정확히 1회만 호출되도록 보장했습니다.</p>
+          <pre class="code-block"><code>actor TokenRefreshCoordinator {
+    private var refreshTask: Task&lt;Void, Error&gt;?
+
+    func refresh(_ operation: @escaping () async throws -> Void) async throws {
+        if let refreshTask {
+            try await refreshTask.value   // 이미 진행 중이면 결과 공유
+            return
+        }
+        let task = Task { try await operation() }
+        refreshTask = task
+        defer { refreshTask = nil }       // 성공/실패 모두 정리
+        try await task.value
+    }
+}</code></pre>
+          <p class="limitation">알려진 한계 — Actor 격리는 런타임 내에서 구조적으로 보장되지만, 동시 요청에 대한 자동화 통합 테스트는 아직 작성되지 않았습니다. 프록시 툴을 이용한 수동 테스트로 검증했습니다.</p>
+
+          <p>갱신 로직 자체가 무한 루프에 빠질 위험도 있었습니다 — refresh 요청(<code>POST /auth/refresh-token</code>)도 결국 네트워크 요청이라, 이 요청 자체가 401을 받으면 다시 refresh를 시도할 수 있기 때문입니다. Endpoint에 <code>requiresAuthentication</code> 플래그(기본값 true)를 추가해 로그인·토큰갱신 엔드포인트는 401 재시도 대상에서 제외시켜 구조적으로 차단했습니다. 또한 Core 계층인 APIClient가 실제 갱신을 수행하는 Data 계층의 AuthRepository를 직접 참조하면 의존성 방향이 역전되므로, Core에는 <code>TokenRefreshing</code> 프로토콜만 두고 Data가 <code>AuthTokenRefresher</code>로 구현한 뒤 DIContainer가 주입 지점에서 연결하도록 분리했습니다.</p>
+
+          <h4>공유되지 않은 APIClient 인스턴스 — 재발한 로그아웃 버그</h4>
+          <p>위 로직을 다 붙인 뒤에도 일부 화면에서는 여전히 즉시 로그아웃되는 문제가 재발했습니다. 원인은 여러 Repository가 초기화 파라미터 기본값으로 <code>= DefaultAPIClient()</code>를 각자 새로 생성하고 있었다는 것 — DIContainer가 <code>tokenRefresher</code>를 주입해둔 공유 인스턴스가 아니라, <code>tokenRefresher</code>가 <code>nil</code>인 별도 인스턴스를 쓰고 있었습니다. DIContainer의 <code>apiClient</code>를 공유 가능하도록 노출하고, Avatar·Home·Game·Stadium·Mate·User·GameLog·Team·Upload 등 9개 Repository의 기본값을 전부 <code>DIContainer.shared.apiClient</code>로 통일했습니다. 코드 전체를 검색해 <code>DefaultAPIClient()</code> 직접 생성이 0건임을 확인한 뒤, 새 Repository를 추가할 때 지켜야 할 규칙으로 문서화했습니다.</p>
+
+          <h4>Keychain 전환 · 세션 만료 자동 복구</h4>
+          <p>초기에는 UserDefaults에 토큰을 평문 저장했으나, 기기 백업 노출 가능성과 앱스토어 심사 기준을 고려해 외부 라이브러리 없이 Security 프레임워크를 직접 래핑해 Keychain으로 전환했습니다. <code>kSecAttrAccessibleAfterFirstUnlock</code>을 적용해 백그라운드 토큰 갱신을 지원하면서도 앱 삭제 시 항목이 자동 제거되도록 했고, <code>sessionDidExpire</code> 알림으로 네트워킹 레이어와 UI 레이어를 완전히 분리했습니다. 구독 측에서는 Combine 대신 <code>for await _ in NotificationCenter.default.notifications(named:)</code>로 알림을 소비해, 프로젝트 전반의 async/await 스타일과 일관성을 유지했습니다.</p>
+
+          <h4>커스텀 APIClient — 팀 추가 비용을 낮추는 인프라</h4>
+          <p>Moya 대신 URLSession 기반 커스텀 APIClient를 직접 구축했습니다. Endpoint 구조체 하나만 작성하면 인증 헤더 부착·401 갱신 재시도·에러 분류가 자동으로 처리되어, 11개 API 그룹이 동일한 패턴으로 추가됐고 인증 누락·재시도 빠짐 같은 반복 실수가 구조적으로 발생하지 않았습니다.</p>
+
+          <h4>서버 불안정 상태코드를 도메인 enum으로 흡수</h4>
+          <p>문서화 없이 LIVE / PROGRESS / ING / END / FINISH / FINAL 등이 혼재하는 <code>gameStateCode</code>를 <code>contains</code> 기반 우선순위 매핑으로 도메인 <code>GameState</code> enum에 흡수시켜, 뷰 레이어에는 문자열 분기 로직이 전혀 없도록 설계했습니다. (오분류 가능성이 있는 한계도 포트폴리오에 명시)</p>
+
+          <h4>팀 로고·팀명 데이터 소스 불일치 — 같은 원칙의 재발견</h4>
+          <p>온보딩 구단 선택과 마이페이지 구단 변경 화면에서 로고는 맞는데 구단명 텍스트만 다르게 표시되는 문제가 있었습니다 — 로고는 <code>team.id → KBOTeam</code> 매핑으로 계산하면서, 이름은 서버가 내려주는 <code>team.name</code>을 그대로 쓰고 있었기 때문입니다. 서버의 팀 이름 배열 순서가 클라이언트 로고 순서와 어긋나 있어, 한 화면 안에 두 개의 서로 다른 데이터 기준이 섞여 있었던 것입니다. 이름도 <code>team.name</code> 대신 <code>KBOTeam.rawValue</code>로 통일하고 두 화면이 같은 <code>TeamLogoCell</code>을 공유하도록 정리해, 위 <code>gameStateCode</code> 사례와 동일한 원칙 — 여러 데이터 소스를 하나의 domain entity 기준으로 통일한다 — 을 다시 적용했습니다.</p>
+
+          <h4>아바타 레이어 합성 · S3 Presigned Upload</h4>
+          <p>6개 슬롯(BODY/BOTTOM/TOP/HEAD/FACE/ACCESSORY)을 레이어 순서 타입으로 명시해 합성 버그를 컴파일 타임에 방지했고, 렌더 → 전신 업로드 → 얼굴 크롭 업로드 → 서버 반영의 순차 파이프라인을 구현했습니다. 부분 실패 시 S3 고아 객체가 남는 한계도 인지하고 문서화했습니다.</p>
+
+          <h4>갤러리 업로드 썸네일 미표시 — S3 object key 판별</h4>
+          <p>직관 로그에 갤러리 사진을 올려 저장해도 카드 목록의 썸네일이 표시되지 않았습니다. 서버 응답을 확인해보니 <code>thumbnailUrl</code>에는 실제 URL이 아니라 <code>game-log-photo/a8c4e568-....jpg</code> 같은 S3 object key가 내려오고 있었는데, 기존 <code>ServerImageURLResolver</code>는 절대 URL이 아닌 값이면 무조건 API base URL을 붙이도록 되어 있어 존재하지 않는 <code>https://dev.with1lu.site/game-log-photo/...</code> 주소로 변환하고 있었습니다. object key 패턴(<code>game-log-photo/</code>, <code>avatar/</code>, <code>icon/</code>)을 감지해 S3 bucket URL로, 그 외 값은 기존처럼 API base URL로 분기하는 로직을 추가했습니다.</p>
+          <pre class="code-block"><code>enum ServerImageURLResolver {
+    private static let s3BaseURL = URL(string: "https://with1lu-dev-bucket.s3.ap-northeast-2.amazonaws.com")!
+
+    static func url(from value: String?) -> URL? {
+        guard let trimmedValue = value?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !trimmedValue.isEmpty else { return nil }
+
+        if let absoluteURL = URL(string: trimmedValue), absoluteURL.scheme != nil {
+            return absoluteURL   // 이미 절대 URL이면 그대로 사용
+        }
+
+        let path = trimmedValue.hasPrefix("/") ? String(trimmedValue.dropFirst()) : trimmedValue
+
+        if path.hasPrefix("game-log-photo/") || path.hasPrefix("avatar/") || path.hasPrefix("icon/") {
+            return s3BaseURL.appendingPathComponent(path)   // S3 object key
+        }
+        return APIEnvironment.baseURL.appendingPathComponent(path)   // 그 외 상대 경로
+    }
+}</code></pre>
+          <p>업로드 성공만으로는 기능이 완성되지 않는다는 것도 함께 확인했습니다 — 서버가 저장·반환하는 값이 절대 URL인지 object key인지에 따라 클라이언트의 URL 해석 규칙이 달라지므로, 이미지 URL 처리는 공통 resolver 하나로 모으고 S3 key와 API 상대 경로를 명확히 구분하는 것이 핵심이었습니다.</p>
+
+          <h4>완성도 있는 엣지 케이스 처리</h4>
+          <ul class="plain-list">
+            <li><strong>Apple 재가입 온보딩 분기</strong> — 탈퇴 후 같은 Apple 계정으로 재가입할 때, 클라이언트의 로컬 차단 상태와 서버의 "신규 가입 가능" 상태가 충돌해 온보딩이 중간에 끊기던 문제를 서버 <code>isNewUser</code>/로컬 <code>needsRegistration</code> 기준으로 재정리</li>
+            <li><strong>갤러리 업로드 Content-Type 불일치</strong> — HEIC로 읽힌 원본을 무조건 <code>image/jpeg</code>로 업로드해 디코딩에 실패하던 문제를 업로드 전 JPEG 데이터로 정규화해 해결</li>
+            <li><strong>저장 버튼 레이스 컨디션</strong> — 사진 업로드가 끝나기 전에 저장 버튼을 눌러 <code>photoKeys</code>가 빈 배열로 전송되는 경우를 막기 위해, 업로드 중 저장 버튼을 비활성화하고 저장 시점에 key가 없으면 재업로드 후 진행하도록 보강</li>
+            <li><strong>아바타 용도별 이미지 분리</strong> — 마이페이지(전체 아바타)와 직관 로그 카드(85×85 얼굴 중심)가 같은 이미지 URL을 서로 다른 용도로 쓰면서 생긴 불일치를 <code>faceImageUrl</code> 우선·<code>avatarImageUrl</code> fallback 구조로 정리</li>
+          </ul>
+
+          <div class="project-links">
+            <span class="chip">GitHub Flow 팀 프로젝트 (비공개 레포)</span>
+          </div>
+        </div>
+        </div>
+      </article>
+
+      <!-- ===== 안아주 ===== -->
+      <article class="project-card reveal" data-tags="ai">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#1a2332; --logo-to:#4a5568;">
+            <img src="images/projects/anaju-logo.png" alt="안아주 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">안아주</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>안아주 <span class="muted">(AnAJu)</span></h3>
+            <p>시각장애 대학생을 위한 회의록 계층 구조 분석 백엔드 — Semantic Structure Agent 기능 확장</p>
+            <div class="tag-list small">
+              <span class="tag">FastAPI</span><span class="tag">Amazon Bedrock</span>
+              <span class="tag">Pydantic v2</span><span class="tag">AI Collaboration</span><span class="tag">Research-based Design</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <p class="project-quote">이 기록이 다루는 범위는 백엔드 전체가 아니라, H1–H2–H3 계층 완성도·hallucination 방어·모델 평가라는 특정 확장 구간을 스펙·검증 기준·품질 게이트로 설계한 과정입니다.</p>
+          <p>교내 AI 에이전트 경진대회 우승 후 <strong>2026 SWING in Silicon Valley</strong> 프로그램에 선발되어, 국내 사전 인터뷰 3회(서울대 이교구 교수·임순범 명예교수 등)와 실리콘밸리 현지 인터뷰 4회(Google·AWS·Stanford·PaperMoon AI) <strong>총 7명의 전문가 검증</strong>을 거쳐 설계 원칙을 확정했습니다. "AI"는 Claude Code(코딩 에이전트)를 의미하며, 본인의 역할은 요구사항·제약조건 명세, 결과물 승인/반려, 검증 기준 설정이었습니다.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><span class="stat-num">5/5</span><span class="stat-label">ground-truth 회의 구조 검증</span></div>
+            <div class="stat"><span class="stat-num">3/3</span><span class="stat-label">deadline 해석 규칙 재현성</span></div>
+            <div class="stat"><span class="stat-num">3→12</span><span class="stat-label">회귀 테스트 수</span></div>
+            <div class="stat"><span class="stat-num">4→0</span><span class="stat-label">규칙 위반 (모델 교체 후)</span></div>
+          </div>
+
+          <h4>선행연구를 기능 요구사항과 검증 로직으로 번역</h4>
+          <p>시각장애인의 생성형 AI 사용, 스크린리더 탐색, 점자·촉각 인터페이스를 다룬 국내외 선행연구 12편을 검토했습니다. 논문을 배경 설명으로만 인용하지 않고, 직접 연결되는 네 가지 축을 제품 요구사항과 서버 검증 기준으로 전환했습니다. (12편 전부를 구현했다는 주장이 아니라, 실제 스키마·프롬프트·후처리로 추적 가능한 연구만 아래에 제시합니다.)</p>
+
+          <div class="research-item">
+            <h5>AI 오류를 사용자가 검증하고 이의를 제기할 수 있어야 한다</h5>
+            <p><em>Misfitting With AI</em> — 시각장애인이 복잡한 문서·언어·문화적 맥락에서 발생한 AI 오류를 어떻게 검증하고 반박하는지 분석한 연구</p>
+            <p class="apply">적용 · 결과 항목마다 STT segment 근거 연결 · 원문/화자/timestamp 역추적 · 입력에 없는 evidence ID 제거</p>
+            <a href="https://dl.acm.org/doi/10.1145/3663548.3675659" target="_blank" rel="noopener">dl.acm.org/doi/10.1145/3663548.3675659</a>
+          </div>
+
+          <div class="research-item">
+            <h5>생성형 AI의 부정확성과 환각을 전제로 설계해야 한다</h5>
+            <p><em>How Blind People Use and Understand Generative AI Tools</em> — 시각장애 사용자가 GenAI의 접근성 문제, 부정확성, 환각을 이해하고 대응하는 방식을 다룬 연구</p>
+            <p class="apply">적용 · 담당자/마감일 추측 금지 · 확정/논의 중/확인 필요 분리 · Pydantic 검증과 서버 정규화</p>
+            <a href="https://dl.acm.org/doi/10.1145/3663548.3675631" target="_blank" rel="noopener">dl.acm.org/doi/10.1145/3663548.3675631</a>
+          </div>
+
+          <div class="research-item">
+            <h5>선형 읽기보다 구조를 건너뛸 수 있는 탐색 경로가 필요하다</h5>
+            <p>스크린리더 사용자는 페이지를 순차적으로 탐색하기 때문에, Heading과 내부 이동 수단이 문서 구조 파악에 중요한 역할을 한다는 연구</p>
+            <p class="apply">적용 · 회의 의미를 H1 &gt; H2 &gt; H3로 구조화 · VoiceOver Heading 탐색 · level을 tree depth로 강제 재계산</p>
+            <a href="https://dl.acm.org/doi/10.1145/3649223" target="_blank" rel="noopener">dl.acm.org/doi/10.1145/3649223</a>
+          </div>
+
+          <div class="research-item">
+            <h5>선택-확인-질문-검증이 이어지는 상호작용을 설계한다</h5>
+            <p><em>Conversational Tactile Data Interfaces</em>(2026) — 촉각 디스플레이와 대화형 AI를 함께 사용하며 select-confirm-ask-verify 흐름을 제안한 연구</p>
+            <p class="apply">적용 · STT 사용자 검토 &gt; 구조 분석 &gt; 항목 탐색 &gt; 자유 질문 &gt; 원문 근거 확인의 단계적 사용자 흐름</p>
+            <a href="https://arxiv.org/abs/2607.14588" target="_blank" rel="noopener">arxiv.org/abs/2607.14588</a>
+          </div>
+
+          <h4>현장 전문가 검증으로 보완한 설계 원칙</h4>
+          <div class="principle-grid">
+            <div class="principle">
+              <span class="org">GOOGLE</span>
+              <h5>Zero Trust</h5>
+              <p>AI 출력도 별도 Evaluation Layer에서 재검증</p>
+            </div>
+            <div class="principle">
+              <span class="org">PAPERMOON AI</span>
+              <h5>Risk-aware UX</h5>
+              <p>오류 위험도를 나누고 confidence와 원문을 함께 제공</p>
+            </div>
+            <div class="principle">
+              <span class="org">AWS</span>
+              <h5>Reliability</h5>
+              <p>실패 지점·재시도·데이터 드롭을 관찰 가능한 구조로 설계</p>
+            </div>
+            <div class="principle">
+              <span class="org">STANFORD</span>
+              <h5>Trade-off</h5>
+              <p>모든 기능보다 핵심 정보 전달에 집중하는 선택과 집중</p>
+            </div>
+          </div>
+
+          <h4>CASE 1 — 재사용 vs 재구현, AI에게 "하지 말아야 할 것"부터 정의</h4>
+          <p>기존 Bedrock 호출·QA·evidence 로직을 깨뜨리지 않으면서 새 계층 구조 기능을 얹어야 했습니다. "LLM 출력은 신뢰하지 않는다"는 원칙 아래, level은 트리 depth로 서버가 강제 재계산하고 H3(level 3) 아래 children은 존재할 수 없도록 방어 로직을 요구했습니다. 이는 실리콘밸리 현지 인터뷰에서 Google Isaac Bentley가 제시한 Zero Trust 원칙을 아키텍처에 반영한 것입니다.</p>
+          <pre class="code-block"><code>@model_validator(mode="after")
+def _level3_has_no_children(self):
+    if self.level == 3 and self.children:
+        raise ValueError("level 3 TopicNode는 children을 가질 수 없습니다.")
+    return self</code></pre>
+
+          <h4>CASE 2 — 스키마 통과 ≠ 프로덕션 정상</h4>
+          <p>단위 테스트 통과만으로 "완료"라 보지 않고 실제 AWS Bedrock 엔드포인트를 호출해 검증했습니다. 리전 설정 오류를 발견해 수정한 뒤, 팀의 실제 ground-truth 데이터셋으로 재검증하자 존재하지 않는 연도를 지어내는 hallucination을 발견했습니다. 프롬프트 규칙만으로는 재현율 50%에 그쳐, 날짜 계산을 LLM 책임에서 빼내 서버가 결정적으로 계산하도록 전환한 뒤 3회 반복 모두 동일한 결과를 얻었습니다.</p>
+
+          <h4>CASE 3 — 모델 세대교체 재검증</h4>
+          <p>경량 모델(Nova Lite)이 반복하던 규칙 위반이 Claude Sonnet 5 교체 후 5/5 회의에서 모두 사라졌습니다. 그러나 두 모델 모두에서 동일하게 재현된 deadline 오류는 모델 문제가 아닌 서버 결정 로직의 문맥 부족 문제로 판단해, evidence 문맥에서 월 정보를 추론하고 문맥이 없으면 추측 대신 <code>null</code>로 남기도록 구현했습니다.</p>
+
+          <h4>Research-to-Code Traceability</h4>
+          <p>연구와 인터뷰에서 얻은 원칙을 프롬프트 문장에만 남기지 않고, 출력 계약과 결정적 후처리로 강제했습니다.</p>
+          <div class="trace-wrap">
+            <table class="trace">
+              <thead>
+                <tr><th>Research Insight</th><th>Product Rule</th><th>Code / Test Evidence</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>긴 회의록의 선형 탐색 비용</td>
+                  <td>제목만 훑어도 회의의 의미 구조를 이해</td>
+                  <td><code>TopicNode.level</code> · <code>normalize_topic_tree()</code> · depth 3 children 차단 테스트</td>
+                </tr>
+                <tr>
+                  <td>AI 결과를 독립적으로 검증하기 어려움</td>
+                  <td>모든 핵심 결과에서 원문으로 역추적</td>
+                  <td><code>evidence_segment_ids</code> · <code>attach_evidence()</code> · seg_999 화이트리스트 제거 테스트</td>
+                </tr>
+                <tr>
+                  <td>마감일·담당자 오류의 피해가 큼</td>
+                  <td>불명확하면 추측 대신 null과 확인 필요 표시</td>
+                  <td><code>resolve_deadline_text()</code> · <code>needs_confirmation</code> · 결정적 날짜 처리 회귀 테스트 9개</td>
+                </tr>
+                <tr>
+                  <td>요약과 정보 유형은 서로 다른 탐색 목적</td>
+                  <td>의미 계층과 TODO/마감/결정 필터 분리</td>
+                  <td><code>topics</code>와 <code>todo_list</code> 분리 · 프롬프트 rule 3-3 · 실제 5개 회의 ground-truth 재검증</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="project-quote">선행연구에서 발견한 접근성 문제를 제품 요구사항으로 번역하고, 이를 LLM 프롬프트에만 맡기지 않고 스키마·정규화·근거 검증 코드로 강제했습니다.</p>
+
+          <p class="limitation">각 사례마다 "고치지 못한 것"도 함께 문서화했습니다 — 연도 계산은 여전히 파이프라인 실행 시점의 시스템 날짜를 기준으로 하며 회의 실제 개최일과 다를 경우 어긋날 수 있습니다. 점자정보단말기 하드웨어 직접 연동과 실제 시각장애 대학생 대상 사용성 평가도 후속 과제로 남아 있습니다. 현재 결과는 연구 기반 설계와 MVP 백엔드 검증 범위에 한정됩니다.</p>
+        </div>
+        </div>
+      </article>
+
+      <!-- ===== SmileGuardian ===== -->
+      <article class="project-card reveal" data-tags="ios">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#0f3d2e; --logo-to:#22c55e;">
+            <img src="images/projects/smileguardian-logo.png" alt="SmileGuardian 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">SG</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>SmileGuardian</h3>
+            <p>Privacy-First Dental Self-Check · Apple Swift Student Challenge 2026 Winner</p>
+            <div class="tag-list small">
+              <span class="tag">Swift Playgrounds</span><span class="tag">Vision</span>
+              <span class="tag">CIE L*a*b*</span><span class="tag">CoreHaptics</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <p class="project-quote">"Beyond convenience — toward dignity." Independence starts with small, everyday moments.</p>
+          <p>시각장애인은 식사 후 치아에 음식물이 남았는지 스스로 확인하기 어렵습니다. 거울은 시각이 필요하고, 주변인에게 묻는 것은 프라이버시 침해가 됩니다. SmileGuardian은 이 작지만 일상적인 문제를 <strong>완전 온디바이스 처리</strong>로 해결하는 앱으로, 2026 Apple Swift Student Challenge에서 수상했습니다.</p>
+
+          <h4>본질적 탐구 — RGB 비교의 실패 → CIE L*a*b* 색 공간 전환</h4>
+          <p>RGB 직접 비교는 조명 차이만으로도 오탐이 반복됐습니다. 임계값 조정으로 봉합하는 대신, RGB가 지각적으로 균일하지 않다는 원인까지 소급해 sRGB → XYZ → D65 기준 CIE L*a*b* 변환과 ΔE CIE76 색차를 외부 라이브러리 없이 직접 구현했습니다.</p>
+          <pre class="code-block"><code>static func rgbToLAB(_ rgb: (r: Double, g: Double, b: Double)) -> LABColor {
+    func linearize(_ c: Double) -> Double {
+        c <= 0.04045 ? c / 12.92 : pow((c + 0.055) / 1.055, 2.4)
+    }
+    // ... XYZ 변환 후 f(t) 함수로 L*, a*, b* 계산
+}</code></pre>
+
+          <h4>개인별 치아 색 프로파일 — 표준화 유클리드 거리 기반 이상 점수</h4>
+          <p>베이스라인 촬영 시 치아 픽셀의 L*a*b* 평균·표준편차로 개인별 <code>ToothColorProfile</code>을 생성하고, 검사 픽셀이 이 분포에서 얼마나 벗어나는지 축별 표준화 유클리드 거리로 측정합니다. 정식 Mahalanobis distance는 아니지만(공분산 행렬 미사용) 구현 단순성 대비 실용적 효과를 제공한다는 점을 명확히 표기했습니다.</p>
+
+          <h4>8존 공간 분석 + 위치 인코딩 햅틱</h4>
+          <p>전체 ΔE 점수만으로는 위치를 알 수 없어, 치아 영역을 4열×2행 = 8개 존으로 분할하고 좌/우 존 이상 시 방향별 진동 타이밍을, 상악 이상 시 sharpness를 강화(0.8 vs 0.4)해 화면 없이도 위치를 촉각으로 인지할 수 있도록 설계했습니다. 모든 결과는 음성 + 햅틱 + 시각 세 채널로 동시 전달됩니다.</p>
+
+          <p class="limitation">검증 현황을 솔직하게 공개합니다 — 조명 조건별·음식물 유무별 정량 정확도, VoiceOver 동시 발화 충돌, 실제 시각장애인 사용자 테스트는 아직 미완 과제이며, 이를 숨기지 않고 다음 단계로 명시하는 것도 이 프로젝트의 가치관입니다.</p>
+        </div>
+        </div>
+      </article>
+
+      <!-- ===== Unibond ===== -->
+      <article class="project-card reveal" data-tags="flutter">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#1e3a5f; --logo-to:#38bdf8;">
+            <img src="images/projects/unibond-logo.png" alt="Unibond 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">UB</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>Unibond</h3>
+            <p>희귀·난치성 질환 청소년을 위한 소통 커뮤니티 앱</p>
+            <div class="tag-list small">
+              <span class="tag">Flutter</span><span class="tag">PM</span><span class="tag">Accessibility</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <p>정보 공유가 주된 목적인 환우회에서 친목을 다지기 어려운 청소년들의 접근성·정서적 안정·사회적 연결을 목표로 개발한 서비스입니다. <strong>현대오토에버·과학기술정보통신부</strong> 지원 제작팀(8팀)으로 선정됐고, 한국 희귀·난치성 질환 연합회와 협력을 논의했으며, 앱 '레어노트' 공동창업자와 직접 미팅했습니다.</p>
+          <p class="project-meta">역할: PM &amp; Flutter 프론트엔드 개발</p>
+          <ul class="plain-list">
+            <li><strong>서비스 아이디어 및 전체 기능 기획 총괄</strong> — 실제 질환자 니즈 분석 기반 서비스 방향성·핵심 기능·UX 플로우 설계, 시각적 피로도·인지 부담을 고려한 접근성 중심 기획</li>
+            <li><strong>국내 전문가 및 관련 단체와의 협업 주도</strong> — 레어노트 창업자 미팅으로 커뮤니티 운영 노하우 확보, 희귀질환연합회와 협력 논의로 타깃 사용자군 정의</li>
+            <li><strong>실사용자 6명 대상 접근성·사용성 테스트</strong> — 정성·정량 데이터 수집 후 UX 최적화, 색 대비·버튼 크기·폰트 가독성 등 접근성 기준 반영</li>
+            <li><strong>핵심 기능 개발: '편지 보내기' &amp; '편지함'</strong> — Flutter 기반 메인 기능 설계·구현, 편지 도착 애니메이션·읽음 상태 등 정서적 안정 요소 설계</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.unibond.jijijin&hl=ln" target="_blank" rel="noopener">Play Store ↗</a>
+            <a href="https://biz.heraldcorp.com/article/3332138" target="_blank" rel="noopener">관련 기사 ↗</a>
+          </div>
+        </div>
+        </div>
+      </article>
+
+      <!-- ===== ORB ===== -->
+      <article class="project-card reveal" data-tags="ios">
+        <button class="project-summary" aria-expanded="false">
+          <div class="project-logo" style="--logo-from:#3b1e5c; --logo-to:#a78bfa;">
+            <img src="images/projects/orb-logo.png" alt="오브 로고" onerror="this.parentElement.classList.add('img-fallback')" />
+            <span class="fallback-content">ORB</span>
+          </div>
+          <div class="project-summary-text">
+            <h3>오브 <span class="muted">(ORB)</span></h3>
+            <p>AI 캐릭터 대화 기반 초개인화 장소 추천 · 코스 기반 탐험 서비스</p>
+            <div class="tag-list small">
+              <span class="tag">UIKit</span><span class="tag">RxSwift</span><span class="tag">SnapKit</span><span class="tag">Moya</span>
+            </div>
+          </div>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <div class="project-detail">
+        <div class="project-detail-inner">
+          <p>AI 캐릭터와의 대화로 초개인화된 장소를 추천받고, 실제 방문해 미션을 수행하는 코스 기반 탐험 서비스입니다. <strong>34기 NOW SOPT 데모데이 우수상</strong>을 수상했습니다.</p>
+          <p class="project-meta">역할: iOS 개발 · Stack: UIKit, RxSwift, SnapKit, Moya, CLLocationManager</p>
+          <ul class="plain-list">
+            <li><strong>예외 상황을 포괄하는 온보딩 플로우</strong> — 실시간 입력 유효성 검사, 네트워크/API 에러 즉각 대응을 포함한 재사용 가능한 온보딩 모듈 개발</li>
+            <li><strong>GPS 기반 장소 인증 코스퀘스트 기능 전체 개발</strong> — 반경 검증, 에러 핸들링, 위치 권한 대응을 포함한 위치 인증 → 방문 처리 → UI 업데이트 단일 흐름 구현</li>
+            <li><strong>UIPanGestureRecognizer 기반 인터랙티브 모달 슬라이드</strong> — 지도 + 리스트 하이브리드 구조에서 자연스러운 제스처 기반 전환(Sticky/Modal) 구현</li>
+            <li><strong>획득 리워드 UI</strong> — 캐릭터·쿠폰 획득 애니메이션으로 UX 완성도 강화</li>
+            <li>UI 설계 → API 연동 → QA 대응 → 성능 개선까지 <strong>엔드투엔드 개발</strong> 수행 및 지속적 리팩토링</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://apps.apple.com/kr/app/%EC%98%A4%EB%B8%8C-%EB%82%98%EB%A7%8C%EC%9D%98-ai-%EC%B9%9C%EA%B5%AC%EC%99%80-%EB%96%A0%EB%82%98%EB%8A%94-%EC%9D%BC%EC%83%81-%ED%83%90%ED%97%98/id6541756824" target="_blank" rel="noopener">App Store ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.teamoffroad.offroad.app" target="_blank" rel="noopener">Play Store ↗</a>
+          </div>
+        </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAREER ================= -->
+<section id="career" class="section section-alt">
+  <div class="container">
+    <p class="section-eyebrow reveal">02</p>
+    <h2 class="section-title reveal">경력</h2>
+
+    <div class="career-list">
+
+      <article class="career-card reveal">
+        <div class="career-head">
+          <div>
+            <h3>(주)루트파인더즈</h3>
+            <p class="career-role">iOS Freelance Developer <span class="muted">· 1인 외주</span></p>
+          </div>
+          <span class="career-period">2026.02.10 – 2026.08.20</span>
+        </div>
+        <p class="career-desc">KBO 야구 직관 기록 · 직관 메이트 매칭 iOS 앱 (일루와, with1LU) 개발</p>
+        <ul class="career-bullets">
+          <li><strong>협업 및 커뮤니케이션</strong> — 디자이너·기획자와 협업하며 기능 단위 개발부터 QA, 배포까지 전 과정 참여</li>
+          <li>iOS 아키텍처를 처음부터 단독 설계, SwiftUI 기반 <strong>Clean Architecture(Presentation–Domain–Data)</strong>로 구현하여 기능 확장성과 테스트 용이성 확보</li>
+          <li><strong>DIContainer</strong> 기반 의존성 주입과 Repository·UseCase 계층 분리로 뷰모델과 네트워크 로직 결합도 최소화</li>
+          <li>Apple 로그인 및 <strong>토큰 자동 갱신(Token Refresh)</strong> 로직 구현으로 세션 만료 시 끊김 없는 사용자 경험 제공</li>
+          <li>홈·경기 기록·직관 메이트·마이페이지 등 전 화면 UI/UX를 단독 구현하고, 재사용 가능한 자체 디자인 시스템 구축</li>
+          <li><strong>async/await</strong> 기반 네트워킹 레이어를 직접 설계하고 REST API 전체를 연동, 백엔드와 협업하며 서버-클라이언트 데이터 흐름 전담</li>
+        </ul>
+      </article>
+
+      <article class="career-card reveal">
+        <div class="career-head">
+          <div>
+            <h3>(주)에스엠플래닛</h3>
+            <p class="career-role">React Native (iOS) Developer Intern</p>
+          </div>
+          <span class="career-period">2025.09 – 2025.12.19</span>
+        </div>
+        <p class="career-desc">EasyPlus — React Native + TypeScript 기반 시각장애인용 콘텐츠 플랫폼 앱 개발</p>
+        <ul class="career-bullets">
+          <li><strong>트러블슈팅 프로세스 체계화</strong> — React Native iOS 환경에서 발생한 문제들의 재발 방지를 위해 Notion 개발일지로 정리해 공유, 실제 문제 해결에 재사용되며 효과 검증 → 프론트/백엔드 팀 전체가 동일 양식을 도입해 <strong>회사 표준 문서로 정착</strong></li>
+          <li><strong>CDN 기반 리소스 관리 로직 구현</strong> — TypeScript로 CDN 쿠키 요청 → 리소스 조회 → 서명 검증 → 파일 로드 흐름 설계</li>
+          <li><strong>CDN 스크립트 구조 표준화</strong> — 명세 없이 제공되던 사운드노벨 스크립트(JSON)를 역공학해 시각적 사양서로 문서화, 신규 개발자 러닝커브 대폭 축소 → 팀 표준 레퍼런스 문서로 활용 중</li>
+          <li><strong>iOS 네이티브 빌드 환경 고도화</strong> — 다중 타겟 지원 Podfile 구조 설계, 환경 변수 분리(.env, .env.dev) 및 빌드 스크립트 자동화로 배포/테스트 환경 분리</li>
+          <li><strong>React Native ↔ iOS 브릿징 이해 및 유지보수</strong> — RN 내부 구조와 Swift 네이티브 모듈 간 상호작용 분석, 네이티브 레벨 런타임 에러 직접 디버깅 및 수정</li>
+          <li><strong>빌드 효율 개선</strong> — RN iOS 빌드 캐시 및 DerivedData 문제 분석으로 빌드 시간 약 <strong>60% 단축</strong>, 빌드 리셋 자동화 스크립트 작성</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT (Education / Cert / Skills) ================= -->
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal">03</p>
+    <h2 class="section-title reveal">Education &amp; Skills</h2>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <h3>Education</h3>
+        <div class="about-item">
+          <p class="about-item-title">숙명여자대학교</p>
+          <p class="about-item-sub">소프트웨어융합전공(데이터사이언스전공) 학사 · 2022.03 ~ 2026.08 졸업 예정</p>
+          <p class="about-item-meta">GPA 3.2 / 4.5</p>
+        </div>
+      </div>
+
+      <div class="about-card reveal">
+        <h3>Certification</h3>
+        <ul class="plain-list">
+          <li><strong>OPIc</strong> — IM2 <span class="muted">(2025.03.14)</span></li>
+          <li><strong>TOPCIT</strong> — 수준 3 <span class="muted">(2025.05.24)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills-grid reveal">
+      <div class="skill-group">
+        <h4>iOS</h4>
+        <div class="tag-list">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">UIKit</span>
+          <span class="tag">Combine</span><span class="tag">MVI Architecture</span><span class="tag">Clean Architecture</span>
+          <span class="tag">RxSwift</span><span class="tag">SnapKit</span><span class="tag">Alamofire</span>
+          <span class="tag">Moya</span><span class="tag">Keychain</span><span class="tag">FCM</span><span class="tag">AdMob</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Cross-Platform</h4>
+        <div class="tag-list">
+          <span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">TypeScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>UX &amp; Product</h4>
+        <div class="tag-list">
+          <span class="tag">User Interview</span><span class="tag">Prototyping</span>
+          <span class="tag">Product Thinking</span><span class="tag">Documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTPRINTS ================= -->
+<section id="footprints" class="section section-alt">
+  <div class="container">
+    <p class="section-eyebrow reveal">04</p>
+    <h2 class="section-title reveal">발자취</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2022.12 – 2023.01</span>
+          <h3>Google Developer Groups (GDG) Code in Songdo</h3>
+          <p>선물 추천 앱 '위위시(WeWish)' Flutter 프론트엔드 개발 및 Google Play 배포</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023.03 – 2024.12</span>
+          <h3>숙명여대 모바일 앱 프로그래밍 동아리 APPS</h3>
+          <p>APPS 11기 부회장(세미나 강의·총무), 백엔드(스프링) 스터디장. 독서동아리 웹 'Livre' 개발(2023.07–11), 칭찬 스티커 앱 'OUTFOOT' Flutter 리드 및 개발(2024.07–2025.02)</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023.05 – 2024.02</span>
+          <h3>배리어프리 앱 개발 콘테스트</h3>
+          <p>희귀·난치성 질환자를 위한 서비스 'Unibond' PM 및 Flutter 프론트엔드 리드. 현대오토에버·과학기술정보통신부 제작 지원팀(8팀) 선정, 오프라인 인터뷰 기반 기능 보완</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024.03 – 2025.07</span>
+          <h3>SOPT 34–35기 iOS</h3>
+          <p>34기 APPJAM '오브(ORB)' iOS 개발 및 앱스토어 배포. 35기 iOS OB, APPJAM '수현이랑' iOS 개발 및 앱스토어 배포(2025.01–2026.02)</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2025.05 – 2026.02</span>
+          <h3>(주)유학앤교육 파이썬 알고리즘 튜터</h3>
+          <p>Python 기초 문법부터 자료구조·알고리즘까지 단계별 커리큘럼 설계 및 1:1 교육. 재귀·탐색(DFS/BFS)·정렬 알고리즘 등 코딩테스트 대비 지도</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2025.09 – 2026.08</span>
+          <h3>실무 경력</h3>
+          <p>(주)에스엠플래닛 React Native(iOS) 개발 인턴(2025.09–12), (주)루트파인더즈 iOS 외주 1인 개발(2026.02–08)</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal highlight">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2026.02 – 2026.03</span>
+          <h3>Apple Swift Student Challenge 2026 Winner</h3>
+          <p>전 세계 참가자 대상 평가에서 기술 완성도와 사용자 중심 설계를 인정받아 대한민국 수상자로 선정. Vision 기반 얼굴 랜드마크로 구강 영역을 인식하고 색상 분석(LAB) 기반 이상 탐지 로직을 온디바이스로 구현</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2026.04</span>
+          <h3>주한미국대사관 AI TechCamp</h3>
+          <p>주한미국대사관 Alumni 선정. 의료·AI·비즈니스 배경의 팀원들과 AI 기반 서비스 기획·개발, NVIDIA·Microsoft 개발자 세션을 통한 실제 서비스 AI 활용 방식 이해</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal highlight">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2026.07 – 2026.08</span>
+          <h3>SWING in 실리콘밸리</h3>
+          <p>시각장애 대학생의 협업을 지원하는 멀티모달 AI 프로젝트('안아주')를 제안하고 문제 정의부터 전문가 인터뷰, 결과 발표까지 전 과정 주도. Google·AWS 현직자, Stanford 연구자, AI 신뢰성 전문가를 직접 발굴·섭외해 인터뷰 진행, 인사이트를 바탕으로 Semantic Meeting Document(SMD) 설계</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2026.07 –</span>
+          <h3>사단법인 한미비전협회(KUVA) 정회원</h3>
+          <p>한미 교류 네트워크의 정회원으로 활동하며, 실리콘밸리 프로그램에서 이어진 글로벌 협업 경험을 지속</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER / CONTACT ================= -->
+<footer id="contact" class="footer">
+  <div class="container footer-inner">
+    <div class="footer-main">
+      <h2>연락 주세요.</h2>
+      <p>새로운 팀, 새로운 문제에 관심이 있습니다. 편하게 연락 주세요.</p>
+      <a href="mailto:loopy0107@sookmyung.ac.kr" class="footer-email">loopy0107@sookmyung.ac.kr</a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:loopy0107@sookmyung.ac.kr">Email</a>
+        <a href="tel:010-7231-3085">010-7231-3085</a>
+      </div>
+      <div class="footer-col">
+        <h4>Channels</h4>
+        <a href="https://www.linkedin.com/in/codejiwon" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/codeJiwon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://velog.io/@loopy0107" target="_blank" rel="noopener">Velog</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <button id="toTop" class="to-top" aria-label="맨 위로">↑</button>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
