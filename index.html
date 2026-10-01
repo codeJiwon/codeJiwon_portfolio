@@ -625,6 +625,10 @@ def _level3_has_no_children(self):
           <li>Apple 로그인 및 <strong>토큰 자동 갱신(Token Refresh)</strong> 로직 구현으로 세션 만료 시 끊김 없는 사용자 경험 제공</li>
           <li>홈·경기 기록·직관 메이트·마이페이지 등 전 화면 UI/UX를 단독 구현하고, 재사용 가능한 자체 디자인 시스템 구축</li>
           <li><strong>async/await</strong> 기반 네트워킹 레이어를 직접 설계하고 REST API 전체를 연동, 백엔드와 협업하며 서버-클라이언트 데이터 흐름 전담</li>
+          <li><strong>인증 구조 개선</strong> — 특정 조건에서 사용자가 비정상적으로 로그아웃되는 문제를 분석해 동시 요청 상황에서도 안정적으로 처리되도록 인증 흐름 재구성, 인증정보 저장 방식을 보안성이 높은 방식으로 변경하고 세션 만료 시 자연스럽게 재로그인되도록 예외 흐름 정리</li>
+          <li><strong>사용자 시나리오 기반 QA 주도</strong> — 이전 프로젝트에서 활용했던 QA 템플릿을 프로젝트에 맞게 적용해 검증 항목과 이슈 관리 방식을 정리하고 기획 파트와 함께 QA 진행. 전달받은 항목 외 앱 전체를 직접 점검해 경기 정보·날짜 처리·데이터 매핑·초기값 처리 등 추가 오류를 발견·수정, 발생 조건 확인 → 수정 → 동일 시나리오 재검증 후 TestFlight 반영</li>
+          <li><strong>배포 준비</strong> — 최종 빌드와 배포용 자료를 App Store Connect에 등록해 출시 직전 단계까지 정리</li>
+          <li><strong>기록 및 인수인계</strong> — 모든 작업 내용을 GitHub PR에 변경 이유와 함께 기록하고, 후임자가 프로젝트 구조와 주요 기능을 빠르게 파악할 수 있도록 README와 관련 문서를 정리해 인수인계 완료</li>
         </ul>
       </article>
 
@@ -636,14 +640,16 @@ def _level3_has_no_children(self):
           </div>
           <span class="career-period">2025.09.01 – 2025.12.31</span>
         </div>
-        <p class="career-desc">EasyPlus — React Native + TypeScript 기반 시각장애인용 콘텐츠 플랫폼 앱 개발</p>
+        <p class="career-desc">EasyPlus — React Native + TypeScript 기반 시각장애인용 콘텐츠 플랫폼 앱 개발 및 운영. React Native를 처음 접하는 환경이었지만 기존 iOS 개발 경험을 바탕으로 구조와 네이티브 연동 방식을 빠르게 익혀 iOS 빌드·배포 환경과 콘텐츠 기능 개발 담당</p>
         <ul class="career-bullets">
           <li><strong>트러블슈팅 프로세스 체계화</strong> — React Native iOS 환경에서 발생한 문제들의 재발 방지를 위해 Notion 개발일지로 정리해 공유, 실제 문제 해결에 재사용되며 효과 검증 → 프론트/백엔드 팀 전체가 동일 양식을 도입해 <strong>회사 표준 문서로 정착</strong></li>
           <li><strong>CDN 기반 리소스 관리 로직 구현</strong> — TypeScript로 CDN 쿠키 요청 → 리소스 조회 → 서명 검증 → 파일 로드 흐름 설계</li>
           <li><strong>CDN 스크립트 구조 표준화</strong> — 명세 없이 제공되던 사운드노벨 스크립트(JSON)를 역공학해 시각적 사양서로 문서화, 신규 개발자 러닝커브 대폭 축소 → 팀 표준 레퍼런스 문서로 활용 중</li>
           <li><strong>iOS 네이티브 빌드 환경 고도화</strong> — 다중 타겟 지원 Podfile 구조 설계, 환경 변수 분리(.env, .env.dev) 및 빌드 스크립트 자동화로 배포/테스트 환경 분리</li>
           <li><strong>React Native ↔ iOS 브릿징 이해 및 유지보수</strong> — RN 내부 구조와 Swift 네이티브 모듈 간 상호작용 분석, 네이티브 레벨 런타임 에러 직접 디버깅 및 수정</li>
-          <li><strong>빌드 효율 개선</strong> — RN iOS 빌드 캐시 및 DerivedData 문제 분석으로 빌드 시간 약 <strong>60% 단축</strong>, 빌드 리셋 자동화 스크립트 작성</li>
+          <li><strong>빌드 효율 개선</strong> — RN iOS 빌드 캐시 및 DerivedData 문제 분석, 개발 환경과 배포 환경의 차이로 발생하던 실행 오류를 분석해 빌드 구조를 정리하고 불필요하게 반복되던 빌드 과정을 개선해 빌드 시간 약 <strong>78% 단축</strong>, 빌드 리셋 자동화 스크립트 작성</li>
+          <li><strong>실기기 테스트 자동화</strong> — iOS 실기기 테스트 과정의 반복 설정을 자동화해 테스트 준비 시간을 크게 단축</li>
+          <li><strong>QA · TestFlight 검증</strong> — 개발 환경에서는 나타나지 않던 음성 기능 및 리소스 관련 오류를 재현하고 원인을 좁혀 수정한 뒤, 동일한 배포 환경에서 다시 검증</li>
         </ul>
       </article>
 
